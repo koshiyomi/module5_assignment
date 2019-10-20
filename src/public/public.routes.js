@@ -44,19 +44,14 @@ function routeConfig ($stateProvider) {
       .state('public.signup', {
         url: '/signup',
         templateUrl: 'src/public/signup/signup.html',
-        controller: 'MenuItemsController',
-        controllerAs: 'menuItemsCtrl',
-        resolve: {
-          menuItems: ['$stateParams','MenuService', function ($stateParams, MenuService) {
-            return MenuService.getMenuItems($stateParams.category);
-          }]
-        }
+        controller: 'SignUpController',
+        controllerAs: 'reg'
       })
       .state('public.myinfo', {
         url: '/myinfo',
         templateUrl: 'src/public/my-info/myinfo.html',
-        controller: 'MenuItemsController',
-        controllerAs: 'menuItemsCtrl',
+        controller: 'MyInfoController',
+        controllerAs: 'ctrl',
         resolve: {
           menuItems: ['$stateParams','MenuService', function ($stateParams, MenuService) {
             return MenuService.getMenuItems($stateParams.category);

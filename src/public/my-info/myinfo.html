@@ -1,0 +1,18 @@
+<h1 id="menu-categories-title"
+    class="text-center">
+    <div ng-if="!ctrl.signed">
+    Not Signed Up Yet. <a ui-sref="public.signup">Sign up Now!</a>
+    </div>
+</h1>
+
+<div ng-if="ctrl.signed" class="text-center">
+    {{ctrl.user.username}}
+    <br>
+    {{ctrl.user.email}}
+    <br>
+    {{ctrl.user.phone}}
+    <br>
+</div>
+<div ng-if="ctrl.signed" class="container">
+<menu-item menu-item="ctrl.dish"></menu-item>
+</div>

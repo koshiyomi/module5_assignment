@@ -2,13 +2,14 @@
     "use strict";
 
     angular.module('public')
-        .controller('MyInfoController', MyInfoController);
+        .controller('SignUpController', SignUpController);
+    SignUpController.$inject = ['MenuService'];
+    function SignUpController(MenuService) {
+        let reg = this;
 
-    MyInfoController.$inject = ['menuCategories'];
-    function MyInfoController(menuCategories) {
-        var $ctrl = this;
-        $ctrl.menuCategories = menuCategories;
+        reg.submit = function () {
+            MenuService.user = reg.user;
+            reg.completed = true;
+        };
     }
-
-
 })();
